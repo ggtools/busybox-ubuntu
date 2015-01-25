@@ -21,4 +21,7 @@ RUN echo >>/etc/passwd "default:x:1000:1000:Default non-root user:/home/default:
 # Create home directory for the default user
 RUN mkdir -p /home/default && chown default:default /home/default
 
+# Adjust /tmp permissions
+RUN chmod 1777 /tmp
+
 CMD ["/bin/sh"]
